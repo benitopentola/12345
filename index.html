@@ -19,114 +19,76 @@
 
     <script src="js/modernizr.custom.js"></script>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+}
 
-    <style>
-        body {
-            background-color: #161718;
-            color: #767B91;
-            height: 100vh;
-            font-family: 'Fira Code', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+#dropdownMenu {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    overflow: hidden; 
+    transition: all 0.3s ease-in-out;
+    max-height: 0;
+    display: flex;
+    flex-direction: column; /* Stack dropdown items vertically */
+    align-items: flex-start; /* Align dropdown items to the left */
+    margin: 1em;
+}
 
-        #dropdownMenu {
-            opacity: 0;
-            transform: scaleY(0);
-            transform-origin: top;
-            background-color: #161718;
-            border: 0.1em solid #C7CCDB;
-            border-radius: 2em;
-            margin-top: 0.5em;
-            overflow: hidden;
-            transition: all 0.3s ease-in-out;
-            max-height: 0;
-        }
+#dropdownMenu.active {
+    opacity: 1;
+    transform: scaleY(1);
+    max-height: 500px; 
+}
 
-        #dropdownMenu.active {
-            opacity: 1;
-            transform: scaleY(1);
-            max-height: 500px;
-        }
+#dropdownMenu li {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0; /* Adjust margin for dropdown items */
+}
 
-        #dropdownMenu li {
-            display: flex;
-            align-items: center;
-            margin: 1em;
-        }
+input {
+    outline: none;
+    text-indent: 0.5em;
+    width: 15em;
+    margin-left: 0.5em;
+}
 
-        input {
-            color: #C7CCDB;
-            background-color: #161718;
-            border: 0.1em solid #C7CCDB;
-            border-radius: 2em;
-            outline: none;
-            text-indent: 0.5em;
-            width: 15em;
-            margin-left: 0.5em;
-        }
+iconify-icon {
+    margin-right: 0.5em;
+}
 
-        iconify-icon {
-            font-size: 1.5em;
-            margin-right: 0.5em;
-        }
+#showMenuBtn {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em; /* Add margin at the top of the button */
+}
 
-        #showMenuBtn {
-            background-color: #161718;
-            border: 0.1em solid #C7CCDB;
-            border-radius: 2em;
-            padding: 0.5em 1em;
-            cursor: pointer;
-            color: #767B91;
-            outline: none;
-        }
+#showMenuBtn:hover {
+    background-color: #C7CCDB;
+}
 
-        #showMenuBtn:hover {
-            background-color: #C7CCDB;
-            color: #161718;
-        }
-    </style>
+
+</style>
+
 
 <style>
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 9999;
-    }
-
-    .modal-dialog {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 500px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .modal-header,
-    .modal-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .modal-header .close {
-      cursor: pointer;
-    }
-
-    .modal-title {
-      margin: 0;
-    }
+  .space {
+    height: 50px;
+    width: 100%;
+    display: block;
+  }
 </style>
 
   </head>
@@ -622,12 +584,47 @@
                   </div>
                 </div>
                 <!-- /Pricing -->
+<div class="space"></div>
 
+    <div>
+        <button id="showMenuBtn" onclick="toggleDropdown()">¡Logeate para hacer tu encargo!</button>
+        <ul id="dropdownMenu">
+            <li><iconify-icon icon="simple-icons:google"></iconify-icon><input type="text" placeholder="Google"></li>
+            <li><iconify-icon icon="mdi:twitter"></iconify-icon><input type="text" placeholder="Twitter"></li>
+            <li><iconify-icon icon="mdi:reddit"></iconify-icon><input type="text" placeholder="Reddit"></li>
+            <li><iconify-icon icon="mdi:github"></iconify-icon><input type="text" placeholder="Github"></li>
+            <li><iconify-icon icon="mdi:telegram"></iconify-icon><input type="text" placeholder="Telegram"></li>
+            <li><button style="text-align: center; width: 200px;" onclick="openLogin()">Iniciar sesión</button></li>
+
+        </ul>
+    </div>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+            } else {
+                dropdown.classList.add('active');
+            }
+        }
+
+        function openLogin() {
+            // Agrega aquí la lógica para abrir la página de inicio de sesión
+        }
+    </script>
 
 <!-- Script necesario para Iconify -->
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
         <!-- Footer -->
 <footer class="site-footer clearfix">
   <div class="footer-social">
@@ -649,9 +646,7 @@
 </footer>
 
 
-              
-        </footer>
-        <!-- /Footer -->
+  
         
       </div>
     </div>
