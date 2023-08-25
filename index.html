@@ -18,6 +18,49 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
 
     <script src="js/modernizr.custom.js"></script>
+
+
+<style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    .modal-dialog {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 500px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-header,
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header .close {
+      cursor: pointer;
+    }
+
+    .modal-title {
+      margin: 0;
+    }
+</style>
+
   </head>
 
   <body class="page">
@@ -511,6 +554,28 @@
                   </div>
                 </div>
                 <!-- /Pricing -->
+
+
+<!-- Modal -->
+<div class="modal" id="modalWindow" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Título del Modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Contenido del modal. Aquí puedes agregar un formulario para logearse, por ejemplo.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
               </div>
 
               </div>
@@ -545,6 +610,24 @@
         
       </div>
     </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const modal = document.getElementById("modalWindow");
+
+      document.querySelectorAll(".btn-secondary, .btn-primary").forEach(function(btn) {
+        btn.addEventListener("click", function(event) {
+          event.preventDefault();
+          modal.style.display = "block";
+        });
+      });
+
+      modal.querySelector(".close").addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+    });
+</script>
+
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/imagesloaded.pkgd.min.js"></script>
