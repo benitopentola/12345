@@ -8,8 +8,6 @@
     <meta name="description" content="Leven - Resume / CV / vCard Template" />
     <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, portfolio" />
     <meta name="author" content="lmpixels" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
 
 
@@ -20,11 +18,14 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
 
     <script src="js/modernizr.custom.js"></script>
+	
+	
 
-
-	    <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
         .whatsapp-button {
             position: fixed;
+            z-index: 9999; /* Añadido para asegurarse de que esté sobre todos los elementos */
             bottom: 20px;
             right: 20px;
             display: inline-block;
@@ -36,7 +37,7 @@
             font-size: 14px;
             text-decoration: none;
         }
-    </style>  
+    </style>
   </head>
 
   <body class="page">
@@ -216,6 +217,7 @@
 </div>
 
 <!-- ... (Código posterior) ... -->
+    <a href="https://wa.me/34611421328" target="_blank" class="whatsapp-button">Chatea con nosotros en WhatsApp</a>
 
 
 
@@ -248,6 +250,8 @@
           </div>
         </footer>
         
+		
+
       </div>
     </div>
 <script>
@@ -257,9 +261,6 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Correo enviado");
     });
 });
-
-    <a href="https://wa.me/34611421328" target="_blank" class="whatsapp-button">Chatea con nosotros en WhatsApp</a>
-	
 </script>
 				  
 				  
