@@ -142,53 +142,62 @@
                   </div>
 
 
-                  <div class=" col-xs-12 col-sm-8 ">
+<!-- ... (Código anterior) ... -->
 
-                    <div class="block-title">
-                      <h2>¿Como te puedo ayudar?</h2>
+<div class=" col-xs-12 col-sm-8 ">
+    <div class="block-title">
+        <h2>¿Cómo te puedo ayudar?</h2>
+    </div>
+
+    <form id="contact_form" class="contact-form" action="https://formsubmit.co/parasoamcorreo@gmail.com" method="post">
+        <div class="messages"></div>
+
+        <div class="controls two-columns">
+            <div class="fields clearfix">
+                <div class="left-column">
+                    <div class="form-group form-group-with-icon">
+                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Tu nombre completo" required="required" data-error="Name is required.">
+                        <div class="form-control-border"></div>
+                        <div class="help-block with-errors"></div>
                     </div>
 
-                    <form id="contact_form" class="contact-form" action="contact_form/contact_form.php" method="post">
+                    <div class="form-group form-group-with-icon">
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Tu correo" required="required" data-error="Valid email is required.">
+                        <div class="form-control-border"></div>
+                        <div class="help-block with-errors"></div>
+                    </div>
 
-                      <div class="messages"></div>
+                    <div class="form-group form-group-with-icon">
+                        <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Asunto" required="required" data-error="Subject is required.">
+                        <div class="form-control-border"></div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="form-group form-group-with-icon">
+                        <textarea id="form_message" name="message" class="form-control" placeholder="Mensaje" rows="7" required="required" data-error="Please, leave me a message."></textarea>
+                        <div class="form-control-border"></div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
 
-                      <div class="controls two-columns">
-                        <div class="fields clearfix">
-                          <div class="left-column">
-                            <div class="form-group form-group-with-icon">
-                              <input id="form_name" type="text" name="name" class="form-control" placeholder="Tu nombre completo" required="required" data-error="Name is required.">
-                              <div class="form-control-border"></div>
-                              <div class="help-block with-errors"></div>
-                            </div>
+            <input type="hidden" name="_replyto" value="email">
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web">
+            <input type="hidden" name="_next" value="URL de redirección después de enviar el formulario">
 
-                            <div class="form-group form-group-with-icon">
-                              <input id="form_email" type="email" name="email" class="form-control" placeholder="Tu correo" required="required" data-error="Valid email is required.">
-                              <div class="form-control-border"></div>
-                              <div class="help-block with-errors"></div>
-                            </div>
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_template" value="table">
 
-                            <div class="form-group form-group-with-icon">
-                              <input id="form_name" type="text" name="subject" class="form-control" placeholder="Asunto" required="required" data-error="Subject is required.">
-                              <div class="form-control-border"></div>
-                              <div class="help-block with-errors"></div>
-                            </div>
-                          </div>
-                          <div class="right-column">
-                            <div class="form-group form-group-with-icon">
-                              <textarea id="form_message" name="message" class="form-control" placeholder="Mensaje" rows="7" required="required" data-error="Please, leave me a message."></textarea>
-                              <div class="form-control-border"></div>
-                              <div class="help-block with-errors"></div>
-                            </div>
-                          </div>
-                        </div>
+            <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
 
-                        <div class="g-recaptcha" data-sitekey="6LdqmCAUAAAAAMMNEZvn6g4W5e0or2sZmAVpxVqI" data-theme="dark"></div>
-      
-                        <input type="submit" class="button btn-send disabled" value="Enviar mensaje">
-                      </div>
-                    </form>
+            <button type="submit" class="button btn-send">Enviar mensaje</button>
+        </div>
+    </form>
+</div>
 
-                  </div>
+<!-- ... (Código posterior) ... -->
+
 
 
                 </div>
